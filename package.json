@@ -1,0 +1,22 @@
+{
+  "name": "polkadotunit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@astar-network/astar-api": "^0.2.8",
+    "@astar-network/astar-sdk-core": "^0.2.8",
+    "@polkadot/api": "^10.11.2",
+    "@polkadot/keyring": "^12.6.2",
+    "@polkadot/types": "^10.11.2",
+    "@polkadot/util": "^12.3.2",
+    "big-integer": "^1.6.52",
+    "ethers": "^5.5.4"
+  }
+}
