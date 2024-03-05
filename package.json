@@ -16,6 +16,7 @@
     "@polkadot/keyring": "^12.6.2",
     "@polkadot/types": "^10.11.2",
     "@polkadot/util": "^12.3.2",
+    "axios": "^1.6.7",
     "big-integer": "^1.6.52",
     "ethers": "^5.5.4"
   }
