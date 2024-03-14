@@ -7,9 +7,9 @@ import { ethers } from 'ethers';
 import { shibuDappList } from './shibu-dapps';
 import { astarDappList } from './astar-dapps';
 
-const testAcnt1 = 'bHkgWQw7eSx1zn2kv5Z9EXMhx7ecS3BmP3dEL6MhrcgodiC';
-const testAcnt2 = 'XJK8XsYuVaLH9L4yetkyRtDi1GKJteyRJbWtTmgphMgu5m8';
-const testAcnt3 = 'X64MTWdusk3Ey3WdAh5L5ygn1HhYjrUG4a6tuo3jKkCbT7C';
+const newStakeV3 = 'bHkgWQw7eSx1zn2kv5Z9EXMhx7ecS3BmP3dEL6MhrcgodiC';
+const swag2 = 'XJK8XsYuVaLH9L4yetkyRtDi1GKJteyRJbWtTmgphMgu5m8';
+const testAcnt2 = 'X64MTWdusk3Ey3WdAh5L5ygn1HhYjrUG4a6tuo3jKkCbT7C';
 // 0. 14933336 8037635890n
 
 const dappAddress = '0xc25d089a9b7bfba1cb10b794cd20c66ec1a9c712';
@@ -98,6 +98,7 @@ const getStakerRewards = async (senderAddress) => {
     }
 
     for (let era = span.firstEra; era <= span.lastEra; era++) {
+    // for (let era = span.firstEra; era <= span.lastEra-1; era++) {
       const staked = claimableEras.get(era);
       if (staked) {
         const eraIndex = era - span.firstEra;
@@ -108,9 +109,9 @@ const getStakerRewards = async (senderAddress) => {
   }
 
   console.log(result);
-
+  // 2 324 124 777 456 732 550n
 }
-getStakerRewards(testAcnt3).catch(console.error).finally(() => process.exit());
+getStakerRewards(newStakeV3).catch(console.error).finally(() => process.exit());
 
 
 async function getEraRewards(spanIndex: number): Promise<EraRewardSpan | undefined> {

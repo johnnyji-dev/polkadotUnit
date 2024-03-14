@@ -254,10 +254,18 @@ const getApiConst = async () => {
     const height = '5577909'; //      actualFee: '76,362,006,026,544,817',
 
     const blockHash = await api.rpc.chain.getBlockHash(height);
-    // console.log(blockHash.toHuman());
+    console.log(blockHash.toHuman()); // 0x5016239bfb1d3166357b4715573a0d5a426db585e2518b3cf894a27c245fdc3f
+    console.log('\n === === \n');
     const signedBlock = await api.rpc.chain.getBlock(blockHash);
-    // console.log(signedBlock.toHuman());
+    console.log(signedBlock.toHuman());
+    console.log('\n === === \n');
+    console.log(signedBlock?.block?.extrinsics?.toHuman());
+    console.log('\n === === \n');
+    console.log(signedBlock?.block?.extrinsics[2].hash.toHuman());
+    // 0x93b1fd62c3f2222d618753e92c6fe14858da0a96d63b3b32d047d1ae6f0df7a2
+    console.log('\n === === \n');
     const apiAt = await api.at(signedBlock.block.header.hash);
+    // const apiAt = await api.at(signedBlock?.block?.extrinsics[2].hash);
     // console.log(apiAt);
     const allRecords = (await apiAt.query.system.events()).toArray();
     // console.log(allRecords);
@@ -266,6 +274,8 @@ const getApiConst = async () => {
     //   console.log(e.toHuman())
     // });
 
+
+    console.log('\n === === \n');
     let feeEvent = '0';
     let idx = 0;
     
